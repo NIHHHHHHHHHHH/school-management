@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Add build optimizations
-  swcMinify: true,
-  output: 'standalone', // This reduces the final image size significantly
   
   images: {
     remotePatterns: [
