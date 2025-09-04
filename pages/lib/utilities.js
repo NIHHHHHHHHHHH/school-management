@@ -1,31 +1,9 @@
-'use server';
+// lib/utilities.js
+import { getPool } from "./database";
 
-
-
-import pool from './database';
-
-/**
- * Database Table Initialization Function
- * This file contains utility functions that interact with the database.
- * The connection pool is imported from the separate 'database.js' file.
- *
- * Creates the schools table if it doesn't already exist.
- * Ensures database schema is properly set up before operations.
- *
- * Table Schema:
- * - id: Auto-incrementing primary key
- * - name: School name (TEXT, required)
- * - address: School address (TEXT, required)
- * - city: School city (TEXT, required)
- * - state: School state (TEXT, required)
- * - contact: Contact number (BIGINT, required for large phone numbers)
- * - image: Image file path (TEXT, optional)
- * - email_id: School email (VARCHAR(255), required)
- * - created_at: Record creation timestamp (auto-generated)
-
- */
 export async function createSchoolsTable() {
   try {
+    const pool = getPool(); // pool is safe now
     const connection = await pool.getConnection();
 
     await connection.execute(`
@@ -43,9 +21,8 @@ export async function createSchoolsTable() {
     `);
 
     connection.release();
-
-    console.log('Schools table created successfully');
+    console.log("Schools table created successfully");
   } catch (error) {
-    console.error('Error creating schools table:', error);
+    console.error("Error creating schools table:", error);
   }
 }
