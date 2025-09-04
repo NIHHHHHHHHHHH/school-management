@@ -1,5 +1,5 @@
-import { getPool } from '../../lib/database';
-import { createSchoolsTable } from '../../lib/utilities';
+import { getPool } from '../../../lib/database';
+import { createSchoolsTable } from '../../../lib/utilities';
 import { v2 as cloudinary } from 'cloudinary';
 import formidable from 'formidable';
 

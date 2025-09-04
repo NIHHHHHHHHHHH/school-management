@@ -1,5 +1,5 @@
-import { getPool } from '../../lib/database';
-import { createSchoolsTable } from '../../lib/utilities';
+import { getPool } from '../../../lib/database';
+import { createSchoolsTable } from '../../../lib/utilities';
 
 /**
  * API Route Handler for Fetching Schools List
