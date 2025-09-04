@@ -1,3 +1,7 @@
+'use server';
+
+
+
 import pool from './database';
 
 /**
